@@ -4,17 +4,17 @@ local lang = redis:get(hash)
     -- superuser and admins only (because sudo are always has privilege)
     if not is_admin(msg) then
    if not lang then
-        return '_You are not bot admin_'
+        return '_You are not bot admin I am sorry ⛔️ _'
 else
-     return 'شما مدیر ربات نمیباشید'
+     return 'من نمیتوانم به دستورات شما جواب بدهم زیرا شما مدیر من نیستید ⛔️'
     end
 end
     local data = load_data(_config.moderation.data)
   if data[tostring(msg.to.id)] then
 if not lang then
-   return '_Group is already added_'
+   return '_Group is already added ✅ _'
 else
-return 'گروه در لیست گروه های مدیریتی ربات هم اکنون موجود است'
+return 'گروه در حال حاضر در لیست گروه های ربات اضافه شده است ✅'
   end
 end
         -- create data array in moderation.json
@@ -73,9 +73,9 @@ end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
     if not lang then
-  return '*Group has been added*'..msg_caption
+  return '*Group has been added 😄😄😄*'..msg_caption
 else
-  return 'گروه با موفقیت به لیست گروه های مدیریتی ربات افزوده شد'..msg_caption
+  return 'گروه اضافه شد 😉'..msg_caption
 end
 end
 
@@ -772,9 +772,9 @@ else
 data[tostring(target)]["settings"]["lock_link"] = "yes"
 save_data(_config.moderation.data, data) 
 if not lang then
- return "*Link* _Posting Has Been Locked_"
+ return "*Link* _Posting Has Been Locked 🚫_"
 else
- return "ارسال لینک در گروه ممنوع شد"
+ return "لینک گذاشتن ممنوع شد قربان 😎 🚫 "
 end
 end
 end
@@ -802,7 +802,7 @@ data[tostring(target)]["settings"]["lock_link"] = "no" save_data(_config.moderat
 if not lang then
 return "*Link* _Posting Has Been Unlocked_" 
 else
-return "ارسال لینک در گروه آزاد شد"
+return "محدودیت ارسال لینک در گروه برداشته شد ⛔️🔓"
 end
 end
 end
@@ -3430,145 +3430,145 @@ if not lang then
 text = [[
 *Beyond Bot Commands:*
 
-*!setowner* `[username|id|reply]` 
+*🔰 /setowner* `[username|id|reply]` 
 _Set Group Owner(Multi Owner)_
 
-*!remowner* `[username|id|reply]` 
+*🔰 /remowner* `[username|id|reply]` 
  _Remove User From Owner List_
 
-*!promote* `[username|id|reply]` 
+*🔰 /promote* `[username|id|reply]` 
 _Promote User To Group Admin_
 
-*!demote* `[username|id|reply]` 
+*🔰 /demote* `[username|id|reply]` 
 _Demote User From Group Admins List_
 
-*!setflood* `[1-50]`
+*🔰 /setflood* `[1-50]`
 _Set Flooding Number_
 
-*!setchar* `[Number]`
+*🔰 /setchar* `[Number]`
 _Set Flooding Characters_
 
-*!setfloodtime* `[1-10]`
+*🔰 /setfloodtime* `[1-10]`
 _Set Flooding Time_
 
-*!silent* `[username|id|reply]` 
+*🔰 /silent* `[username|id|reply]` 
 _Silent User From Group_
 
-*!unsilent* `[username|id|reply]` 
+*🔰 /unsilent* `[username|id|reply]` 
 _Unsilent User From Group_
 
-*!kick* `[username|id|reply]` 
+*🔰 /kick* `[username|id|reply]` 
 _Kick User From Group_
 
-*!ban* `[username|id|reply]` 
+*🔰 /ban* `[username|id|reply]` 
 _Ban User From Group_
 
-*!unban* `[username|id|reply]` 
+*🔰 /unban* `[username|id|reply]` 
 _UnBan User From Group_
 
-*!whitelist* [+-] `[username|id|reply]` 
+*🔰 /whitelist* [+-] `[username|id|reply]` 
 _Add Or Remove User From White List_
 
-*!res* `[username]`
+*🔰 /res* `[username]`
 _Show User ID_
 
-*!id* `[reply]`
+*🔰 /id* `[reply]`
 _Show User ID_
 
-*!whois* `[id]`
+*🔰 /whois* `[id]`
 _Show User's Username And Name_
 
-*!lock* `[link | join | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin | cmds]`
+*🔰 /lock* `[link | join | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin | cmds]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
 
-*!unlock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
+*🔰 /unlock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
 _If This Actions Unlock, Bot Not Delete Them_
 
-*!mute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
+*🔰 /mute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
 
-*!unmute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
+*🔰 /unmute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
 _If This Actions Unlock, Bot Not Delete Them_
 
-*!set*`[rules | name | photo | link | about | welcome]`
+*🔰 /set*`[rules | name | photo | link | about | welcome]`
 _Bot Set Them_
 
-*!clean* `[bans | mods | bots | rules | about | silentlist | filtelist | welcome]`   
+*🔰 /clean* `[bans | mods | bots | rules | about | silentlist | filtelist | welcome]`   
 _Bot Clean Them_
 
-*!filter* `[word]`
+*🔰 /filter* `[word]`
 _Word filter_
 
-*!unfilter* `[word]`
+*🔰 /unfilter* `[word]`
 _Word unfilter_
 
-*!pin* `[reply]`
+*🔰 /pin* `[reply]`
 _Pin Your Message_
 
-*!unpin* 
+*🔰 /unpin* 
 _Unpin Pinned Message_
 
-*!welcome enable/disable*
+*🔰 /welcome enable/disable*
 _Enable Or Disable Group Welcome_
 
-*!settings*
+*🔰 /settings*
 _Show Group Settings_
 
-*!mutelist*
+*🔰 /mutelist*
 _Show Mutes List_
 
-*!silentlist*
+*🔰 /silentlist*
 _Show Silented Users List_
 
-*!filterlist*
+*🔰 /filterlist*
 _Show Filtered Words List_
 
-*!banlist*
+*🔰 /banlist*
 _Show Banned Users List_
 
-*!ownerlist*
+*🔰 /ownerlist*
 _Show Group Owners List_ 
 
-*!modlist* 
+*🔰 /modlist* 
 _Show Group Moderators List_
 
-*!whitelist* 
+*🔰 /whitelist* 
 _Show Group White List Users_
 
-*!rules*
+*🔰 /rules*
 _Show Group Rules_
 
-*!about*
+*🔰 /about*
 _Show Group Description_
 
-*!id*
+*🔰 /id*
 _Show Your And Chat ID_
 
-*!gpinfo*
+*🔰 /gpinfo*
 _Show Group Information_
 
-*!newlink*
+*🔰 /newlink*
 _Create A New Link_
 
-*!link*
+*🔰 /link*
 _Show Group Link_
 
-*!linkpv*
+*🔰 /linkpv*
 _Send Group Link In Your Private Message_
 
-*!setwelcome [text]*
+*🔰 /setwelcome [text]*
 _set Welcome Message_
 
-*!setlang [fa | en]*
+*🔰 /setlang [fa | en]*
 _Set Persian/English Language_
 
-*!setcmd [fa | en]*
+*🔰 /setcmd [fa | en]*
 _Set CMD Persian/English Language_
 
-*!helptools*
+*🔰 /helptools*
 _Show Tools Help_
 
-*!helpfun*
+*🔰 /helpfun*
 _Show Fun Help_
 
 _You Can Use_ *[!/#]* _To Run The Commands_
